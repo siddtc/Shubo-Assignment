@@ -1,0 +1,81 @@
+.container
+{
+    max-width: 60%;
+    margin: 0% auto;
+    padding: 0%;
+    border: 2px solid black;
+
+}
+.backButton
+{
+    background: transparent;margin-left: 10px;border: none;font-size: 20px;font-weight: bold;cursor: pointer;
+}
+.header
+{
+    display: flex;
+    border-bottom: 2px solid black;
+    align-items: center;
+}
+.image
+{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(231, 198, 136);
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 14px;
+    
+}
+.nandn
+{
+    
+    margin-left: 14px;
+   
+}
+
+
+
+
+
+.tdetails
+{
+    border: 2px solid black;
+}
+.transaction
+{
+    width: 55%;
+    margin: 30px 10PX;
+   
+    
+}
+
+.amount
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 10px;
+    align-items: center;
+}
+
+
+.cButton{
+    padding: 5px 0px 30px 0px;
+}
+
+.cButton button {
+    padding: 2px 35px ;background: transparent;cursor: pointer
+}
+
+.bdetails
+{
+    padding: 2px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4px;
+
+}
+.bdetails button
+{
+    background: transparent;cursor: pointer;
+    
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/payments.css">
+    <script src="/js/payments.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>UPI Payments</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="backButton" onclick="buttonClicked()">&larr;</button>
+            <div class="image"><span style="align-items:  center;display: block;margin-top: 6px;">J</span></div>
+            <div class="nandn">
+                <span> John Doe</span><br><span style="font-size: 15px;opacity: 0.7;">+91-9876543210</span>
+            </div>
+        </div>
+
+
+        <div class="transactions">
+
+            <% payments.forEach(function(payment){ %>
+                <% if (payment.direction==1) { %>
+                    <div class="transaction" style="margin-left: auto;">
+                        <div class="tdetails">
+                            <div class="amount">
+                                <div style="font-size: 50px;">&#8377 <%= payment.amount %></div>
+                                <% if (payment.type==1) { %>
+
+                                    <div style="align-items: center;display: flex;"><div>&#10003</div> <div style="margin-left: 3px;">You Paid</div></div>
+
+                                
+
+                                <% } else { %>
+                                    <div style="align-items: center;display: flex;"><i class="material-icons" style="display: block;">attachment</i> <div>You requested</div></div>
+
+                                <%}%>
+                                
+                            </div>
+                            <div class="bdetails">
+                              <div>
+                                <% if (payment.transactionId) { %>
+                                    <div class="trasactionId">
+                                        Transaction ID
+                                        <br>
+                                        <%= payment.transactionId %>
+                                    </div>
+
+                                <% } else {%>
+                                    <div class="cButton">
+                                        <button >Cancel</button>
+                                    </div>
+
+                                <%}%>
+                              </div>
+                              <div>
+                                <button style="border: none;"><i class="material-icons">keyboard_arrow_right</i></button>
+                              </div>
+                            </div>
+                        </div>
+                        <div style="float:right"><%= payment.transactionDate %></div>
+                    </div>
+                    
+          
+                <% } else {%>
+                    <div class="transaction" >
+                        <div class="tdetails">
+                            <div class="amount">
+                                <div style="font-size: 50px;">&#8377 <%= payment.amount %></div>
+                                <% if (payment.type==2) { %>
+
+                                    <div style="align-items: center;display: flex;"><div>&#10003</div> <div style="margin-left: 3px;">You recieved</div></div>
+
+                                
+
+                                <% } else { %>
+                                    <div style="align-items: center;display: flex;"><i class="material-icons" style="display: block;">attachment</i> <div>Request recieved</div></div>
+
+                                <%}%>
+                                
+                            </div>
+                            <div class="bdetails">
+                              <div>
+                                <% if (payment.transactionId) { %>
+                                    <div class="trasactionId" >
+                                        Transaction ID
+                                        <br>
+                                        <%= payment.transactionId %>
+                                    </div>
+
+                                <% } else {%>
+                                    <div class="cButton">
+                                        <button>Pay</button>
+                                        <button>Decline</button>
+                                    </div>
+
+                                <%}%>
+                              </div>
+                              <div>
+                                <button style="border: none;"><i class="material-icons">keyboard_arrow_right</i></button>
+                              </div>
+                            </div>
+                        </div>
+                        <div style="float:right"><%= payment.transactionDate %></div>
+                    </div>
+
+                <% } %>
+              <% }); %>
+
+        </div>
+
+    </div>
+</body>
+</html>
